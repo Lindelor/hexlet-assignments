@@ -64,6 +64,8 @@ class AppTest {
         assertThat(rs.length()).isEqualTo(3);
         assertThat(rs.charAt(0)).isEqualTo('3');
         assertThat(rs.toString()).isEqualTo("321");
+        assertThat(rs.subSequence(0, 2).toString()).isEqualTo("32");
+        assertThat(rs.subSequence(1, 3).toString()).isEqualTo("21");
     }
 
     @Test

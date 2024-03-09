@@ -43,7 +43,7 @@ public class ReversedSequence implements CharSequence {
     @Override
     public CharSequence subSequence(int start, int end) {
 
-        if (end < start || start >= length || end >= length || start < 0) {
+        if (end < start || start >= length || end > length || start < 0) {
             throw new IndexOutOfBoundsException();
         }
         StringBuilder result = new StringBuilder();
