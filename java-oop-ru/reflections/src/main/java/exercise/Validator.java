@@ -27,7 +27,7 @@ public class Validator {
                 errors.add("cannot be null");
             }
             if (lengthCheck != null) {
-                errors.add(String.format("length less than %s", lengthCheck));
+                errors.add(lengthCheck);
             }
 
             if (!errors.isEmpty()) {
@@ -54,11 +54,11 @@ public class Validator {
         try {
             field.setAccessible(true);
             if (field.get(address) == null) {
-                return "" + field.getAnnotation(MinLength.class).minLength();
+                return String.format("length less than %s", field.getAnnotation(MinLength.class).minLength());
             }
             if (field.getAnnotation(MinLength.class) != null && field.get(address).toString().length() <
                     field.getAnnotation(MinLength.class).minLength()) {
-                return "" + field.getAnnotation(MinLength.class).minLength();
+                return String.format("length less than %s", field.getAnnotation(MinLength.class).minLength());
             }
         } catch (IllegalAccessException e) {
             e.printStackTrace();
