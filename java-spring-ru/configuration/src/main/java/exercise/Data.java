@@ -31,7 +31,7 @@ class Data {
         List admins = List.of(
             new User(getNextId(), "Glynn Joinsey", "gjoinsey1@blogger.com"),
             new User(getNextId(), "Sarina Crosi", "scrosi4@cam.ac.uk"),
-            new User(getNextId(), "Emmit Brundle", "scrosi4@cam.ac.uk")
+            new User(getNextId(), "Emmit Brundle", "ebrundle@cam.ac.uk")
         );
 
         users.addAll(admins);
