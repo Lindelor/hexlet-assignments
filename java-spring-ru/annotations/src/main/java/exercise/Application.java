@@ -8,8 +8,14 @@ public class Application {
     public static void main(String[] args) {
         var address = new Address("London", 12345678);
 
-        // BEGIN
-        
-        // END
+        for (Method method : Address.class.getDeclaredMethods()) {
+            if (method.isAnnotationPresent(Inspect.class)) {
+                String stringBuilder = "Method " +
+                        method.getName() +
+                        " returns a value of type " +
+                        method.getReturnType().getSimpleName();
+                System.out.println(stringBuilder);
+            }
+        }
     }
 }
