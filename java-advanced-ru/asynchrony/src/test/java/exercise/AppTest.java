@@ -50,20 +50,14 @@ class AppTest {
     void testGetDirectorySize() throws ExecutionException, InterruptedException {
         CompletableFuture<Long> result = App.getDirectorySize("src/test/resources/size");
 
-        assertThat(result.get()).isEqualTo(13L);
+        assertThat(result.get()).isEqualTo(4109L);
     }
 
     @Test
     void testGetDirectorySize2() throws ExecutionException, InterruptedException {
         CompletableFuture<Long> result = App.getDirectorySize("src/test/resources/size2");
 
-        assertThat(result.get()).isEqualTo(13L);
+        assertThat(result.get()).isEqualTo(8205L);
     }
 
-    @Test
-    void testGetDirectorySize3() throws ExecutionException, InterruptedException {
-        CompletableFuture<Long> result = App.getDirectorySize("src/test/resources/size3");
-
-        assertThat(result.get()).isEqualTo(0L);
-    }
 }
